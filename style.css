@@ -47,11 +47,48 @@ header .container {
   gap: 1.5rem;
 }
 
+/* Photo Gallery */
+.photo-gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+.photo-gallery.single .photo-nav {
+  visibility: hidden;
+}
+
+.photo-frame {
+  text-align: center;
+}
+
+.photo-nav {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.4rem;
+  color: var(--text-light);
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.photo-nav:hover {
+  background: var(--light);
+  color: var(--primary);
+}
+
 .profile-photo {
   display: block;
   width: 100%;
   max-width: 360px;
-  margin: 1.2rem auto 0;
   border-radius: 8px;
   object-fit: cover;
   border: 3px solid var(--accent);

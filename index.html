@@ -38,8 +38,14 @@
       My work spans differentiable programming, physical design, and timing analysis
       for semiconductor chip design.
     </p>
-    <img src="ebrahim.jpg" alt="Ebrahim M. Songhori" class="profile-photo">
-    <p class="photo-caption">Chefchaouen, Morocco, 2025</p>
+    <div class="photo-gallery">
+      <button class="photo-nav photo-prev" aria-label="Previous photo">&lsaquo;</button>
+      <div class="photo-frame">
+        <img src="" alt="Ebrahim M. Songhori" class="profile-photo">
+        <p class="photo-caption"></p>
+      </div>
+      <button class="photo-nav photo-next" aria-label="Next photo">&rsaquo;</button>
+    </div>
   </section>
 
   <section>
@@ -175,5 +181,29 @@
   &copy; 2026 Ebrahim M. Songhori
 </footer>
 
+<script>
+(async function() {
+  const res = await fetch('photos/photos.json');
+  const photos = await res.json();
+  if (!photos.length) return;
+  let idx = 0;
+  const img = document.querySelector('.profile-photo');
+  const caption = document.querySelector('.photo-caption');
+  const prev = document.querySelector('.photo-prev');
+  const next = document.querySelector('.photo-next');
+  const gallery = document.querySelector('.photo-gallery');
+
+  function show(i) {
+    idx = (i + photos.length) % photos.length;
+    img.src = 'photos/' + photos[idx].file;
+    caption.textContent = photos[idx].caption;
+    gallery.classList.toggle('single', photos.length <= 1);
+  }
+
+  prev.addEventListener('click', () => show(idx - 1));
+  next.addEventListener('click', () => show(idx + 1));
+  show(0);
+})();
+</script>
 </body>
 </html>
