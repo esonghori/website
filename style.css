@@ -111,6 +111,14 @@ section h2 {
   margin-bottom: 1rem;
 }
 
+.photo-caption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  font-style: italic;
+  margin-top: 0.4rem;
+}
+
 /* About */
 .about p {
   color: var(--text-light);
