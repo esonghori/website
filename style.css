@@ -107,6 +107,16 @@ header .tagline {
   max-width: 600px;
 }
 
+header .tagline a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+header .tagline a:hover {
+  color: var(--highlight);
+}
+
 .links {
   display: flex;
   gap: 1.2rem;
