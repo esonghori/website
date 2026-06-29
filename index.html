@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ebrahim M. Songhori - AI for Chip Design | Ricursive Intelligence</title>
   <meta name="description" content="Ebrahim Songhori - Founding Member of Technical Staff at Ricursive Intelligence. Former AlphaChip team member at Google DeepMind. AI/ML for semiconductor chip design, published in Nature.">
-  <meta name="keywords" content="Ebrahim Songhori, Ebrahim M. Songhori, AI for Chip Design, AI chip design, Chip for AI, Chip for LLM, AI for AI chip, AI infrastructure, LLM infrastructure, LLM infra, LLM systems, AI systems, AI engineer, ML engineer, research engineer, AlphaChip, graph placement, chip placement, chip floorplanning, physical design, timing analysis, electronic design automation, EDA, semiconductor, semiconductor design, hardware accelerator, hardware accelerator search, differentiable programming, machine learning, deep learning, reinforcement learning, graph neural networks, graph convolutional networks, two-tower retrieval, recommendation systems, Google DeepMind, Google Brain, ML for Systems, Ricursive Intelligence, privacy-preserving computation, secure computation, secure multiparty computation, MPC, garbled circuits, TinyGarble, Chameleon, secure machine learning, Rice University, University of Tehran">
+  <meta name="keywords" content="Ebrahim Songhori, AI for chip design, AlphaChip, chip placement, graph placement, machine learning for EDA, semiconductor design, Ricursive Intelligence, Google DeepMind">
+  <meta name="author" content="Ebrahim M. Songhori">
   <link rel="canonical" href="https://esonghori.com/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -32,6 +33,9 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "dateModified": "2026-06-28",
+    "mainEntity": {
     "@type": "Person",
     "name": "Ebrahim M. Songhori",
     "alternateName": "Ebrahim Songhori",
@@ -60,6 +64,7 @@
       "https://scholar.google.com/citations?user=45dAUpoAAAAJ",
       "https://x.com/esonghori2"
     ]
+    }
   }
   </script>
 
@@ -99,10 +104,17 @@
       My work spans differentiable programming, physical design, and timing analysis
       for semiconductor chip design.
     </p>
+    <p>
+      Broadly, I work at the intersection of machine learning and electronic design
+      automation (EDA) &mdash; applying reinforcement learning, graph neural networks,
+      and differentiable optimization to hard problems in chip placement and
+      floorplanning. The goal is to make AI a practical, foundational part of how
+      modern semiconductors are designed.
+    </p>
     <div class="photo-gallery">
       <button class="photo-nav photo-prev" aria-label="Previous photo">&lsaquo;</button>
       <div class="photo-frame">
-        <img src="" alt="Ebrahim M. Songhori" class="profile-photo">
+        <img src="" alt="Ebrahim M. Songhori" class="profile-photo" loading="lazy" width="600" height="400">
         <p class="photo-caption"></p>
       </div>
       <button class="photo-nav photo-next" aria-label="Next photo">&rsaquo;</button>
@@ -261,6 +273,7 @@
   function show(i) {
     idx = (i + photos.length) % photos.length;
     img.src = 'photos/' + photos[idx].file;
+    img.alt = 'Ebrahim M. Songhori — ' + photos[idx].caption;
     caption.textContent = photos[idx].caption;
     gallery.classList.toggle('single', photos.length <= 1);
   }
