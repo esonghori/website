@@ -255,6 +255,19 @@ section h2 {
   font-size: 0.95rem;
 }
 
+/* Content figures */
+.fig {
+  margin: 1.2rem 0;
+  text-align: center;
+}
+
+.fig img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
 /* Footer */
 footer {
   text-align: center;
