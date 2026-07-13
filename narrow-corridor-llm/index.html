@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapping the Narrow Corridor with LLMs | Ebrahim M. Songhori</title>
+  <meta name="description" content="A project by Ebrahim Songhori using large language models to operationalize Acemoglu and Robinson's Narrow Corridor — scoring state power vs. society power to build a reproducible 12-country trajectory atlas, checked against V-Dem.">
+  <meta name="keywords" content="Narrow Corridor, Acemoglu Robinson, large language models, LLM, political science, state capacity, V-Dem, Ebrahim Songhori, AI for social science">
+  <meta name="author" content="Ebrahim M. Songhori">
+  <link rel="canonical" href="https://esonghori.com/narrow-corridor-llm/">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Mapping the Narrow Corridor with Large Language Models">
+  <meta property="og:description" content="Using LLMs to operationalize Acemoglu and Robinson's Narrow Corridor into a reproducible 12-country trajectory atlas, checked against V-Dem.">
+  <meta property="og:url" content="https://esonghori.com/narrow-corridor-llm/">
+  <meta property="og:image" content="https://esonghori.com/photos/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mapping the Narrow Corridor with Large Language Models">
+  <meta name="twitter:site" content="@esonghori2">
+  <meta name="twitter:description" content="Using LLMs to operationalize Acemoglu and Robinson's Narrow Corridor into a reproducible 12-country trajectory atlas.">
+  <meta name="twitter:image" content="https://esonghori.com/photos/og-image.jpg">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Mapping the Narrow Corridor with Large Language Models",
+    "author": {
+      "@type": "Person",
+      "name": "Ebrahim M. Songhori",
+      "url": "https://esonghori.com/"
+    },
+    "datePublished": "2026-07-07",
+    "mainEntityOfPage": "https://esonghori.com/narrow-corridor-llm/",
+    "image": "https://esonghori.com/photos/og-image.jpg",
+    "about": ["The Narrow Corridor", "Large Language Models", "Comparative Politics", "State Capacity"],
+    "keywords": "Narrow Corridor, Acemoglu, Robinson, large language models, LLM, V-Dem, political science"
+  }
+  </script>
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Mapping the Narrow Corridor with LLMs</h1>
+    <p class="tagline">
+      A project by <a href="https://esonghori.com/">Ebrahim M. Songhori</a>.
+    </p>
+    <div class="links">
+      <a href="https://esonghori.com/">&larr; Home</a>
+      <a href="https://github.com/esonghori/narrow-corridor-llm">GitHub Repo</a>
+      <a href="/narrow-corridor-llm/gallery/">Interactive Gallery</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <h2>Overview</h2>
+    <p>
+      In <em>The Narrow Corridor: States, Societies, and the Fate of Liberty</em>, Daron Acemoglu
+      and James A. Robinson &mdash; awarded the 2024 Nobel Prize in Economics for the body of
+      institutional research this book belongs to &mdash; trace national histories as paths through
+      a two-dimensional <strong>(state power, society power)</strong> space, with a narrow
+      <em>corridor</em> between the two axes where liberty is sustained. The book, however, plots
+      none of these paths: quantifying the two axes at each historical moment is the
+      labor-intensive, judgment-laden task that has kept the framework qualitative.
+    </p>
+    <p>
+      This project asks whether a <strong>large language model (LLM)</strong> can operationalize it.
+      It scores a country period by period &mdash; using chain-of-thought prompting (events first,
+      then a score) and in-context anchoring on prior periods against an explicit 0&ndash;10 rubric,
+      returning schema-validated scores &mdash; to produce reproducible trajectories that can be
+      checked against an established expert index (V-Dem).
+    </p>
+  </section>
+
+  <section>
+    <h2>The Atlas</h2>
+    <p>
+      The accompanying short paper builds a <strong>twelve-country trajectory atlas</strong> &mdash;
+      Iran, France, the United Kingdom, the United States, China, Chile, Colombia, the Democratic
+      Republic of the Congo, Lebanon, Zambia, Somalia, and India &mdash; chosen so that at least two
+      countries fall in each of the book's four <strong>Leviathan types</strong>: Despotic, Shackled,
+      Paper, and Absent. It compares four LLMs (Gemini, Claude, GPT, and an open-weight Qwen),
+      checks the scores against the V-Dem expert index, and quantifies inter-model agreement. Because
+      every country is scored against the same fixed rubric, all twelve sit on one shared map of the
+      book's regions.
+    </p>
+  </section>
+
+  <section>
+    <h2>How It Works</h2>
+    <p>
+      The tool is a provider-agnostic Python package (via LiteLLM) that scores any country over any
+      period range, caches responses so re-runs are free, and can plot a trajectory or animate it to
+      reveal each period's key event. A build step turns a directory of runs into a self-contained,
+      hostable gallery of plots with click-to-play animations. Every run in the paper &mdash; 12
+      countries &times; 4 models, plus the V-Dem and ensemble atlases &mdash; ships with its full
+      prompt and response transcript for reproducibility.
+    </p>
+  </section>
+
+  <section>
+    <h2>Links</h2>
+    <ul class="pub-list">
+      <li><a href="https://github.com/esonghori/narrow-corridor-llm">Source code and paper on GitHub</a></li>
+      <li><a href="/narrow-corridor-llm/gallery/">Interactive gallery of trajectories</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 Ebrahim M. Songhori
+</footer>
+
+</body>
+</html>
